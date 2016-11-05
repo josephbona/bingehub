@@ -1,0 +1,116 @@
+.site-header {
+  @include clearfix();
+  position: fixed;
+  height: 64px;
+  width: 100%;
+  top: 0;
+  z-index: 100;
+  background-color: $brand-primary;
+  .container-fluid {
+    position: relative;
+    height: 100%;
+  }
+  .logo {
+  	font-family: $font-family-brand;
+    position: absolute;
+    left: 15px;
+    top: 15px;
+    display: block;
+    height: 35px;
+    width: 200px;
+    display: inline-block;
+    color: white;
+    font-size: 28px;
+    img {
+    	vertical-align: sub;
+    	height: 35px;
+    	margin-right: 10px;
+    }
+	  &:hover, &:focus {
+	  	text-decoration: none;
+	  }
+  }
+}
+
+.site-navigation {
+	float: left;
+	margin: 23px 0 0 185px;
+  ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    li {
+      float: left;
+      margin-left: 20px;
+      &:first-child {
+      	margin-left: 0;
+      }
+      a {
+        cursor: pointer;
+      	font-size: 17px;
+      	font-weight: 600;
+        color: rgba(#fff, 0.6);
+        &:hover, &:focus {
+        	text-decoration: none;
+        	color: #fff;
+        }
+      }
+      &.search-link {
+        a {
+          @include transition(200ms);
+          opacity: 0;
+          .scroll & {
+            opacity: 1;
+          }
+        }
+      }
+    }
+  }
+  &-right {
+  	float: right;
+  }
+  .dropdown-menu {
+    &:before {
+      content: '';
+      position: absolute;
+      top: -7px;
+      right: 6px;
+      width: 0;
+      height: 0;
+      border-style: solid;
+      border-width: 0 7.5px 7px 7.5px;
+      border-color: transparent transparent #ffffff transparent;
+    }
+    li {
+      float: none;
+      margin: 0;
+      a {
+        font-weight: normal;
+        font-size: 16px;
+        display: block;
+        color: $gray-dark;
+        cursor: pointer;
+        i {
+          margin-right: 5px;
+          font-size: 80%;
+        }
+        &:hover {
+          background: none;
+          color: $gray-dark;
+          i {
+            color: $brand-primary;
+            vertical-align: middle;
+          }
+        }
+      }
+    }
+  }
+}
+.header-btn {
+  @extend .btn;
+  @extend .btn-warning;
+  font-size: 16px;
+  font-weight: 600;
+  margin-top: -7px;
+  color: white !important;
+}

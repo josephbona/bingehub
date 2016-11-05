@@ -1,0 +1,48 @@
+.card {
+  display: block;
+  @include border-radius(6px);
+  cursor: pointer;
+  @include transition(box-shadow 300ms);
+  box-shadow: 0 0 20px rgba(0,0,0, .1);
+  overflow: hidden;
+  position: relative;
+  margin-bottom: 30px;
+  .poster {
+    @include border-radius(6px);
+    width: 100%;
+    height: auto;
+  }
+  .details {
+    @include transition(200ms ease);
+    @include border-bottom-radius(6px);
+    position: absolute;
+    width: 100%;
+    bottom: -100%;
+    padding: 10px 15px;
+    background: $brand-dark;
+    .title {
+      margin: 0;
+      font-size: 16px;
+      font-weight: 600;
+      color: white;
+    }
+    .year {
+      color: $gray-lighter;
+      font-size: 0.75em;
+    }
+    .stream-count {
+      font-size: 12px;
+      margin: 0;
+      color: $brand-warning;
+      &.no-streams {
+        color: #ccc;
+      }
+    }
+  }
+  &:hover {
+    box-shadow: 0 0 50px rgba(0,0,0, .3);
+    .details {
+      bottom: 0;
+    }
+  }
+}

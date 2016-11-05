@@ -1,0 +1,33 @@
+<div>
+<header class="site-header">
+  <div class="container-fluid">
+    <a href="./" class="logo"><img src="https://s3.amazonaws.com/fsstackstore/tv-icon.png" alt="">BingeHub</a>
+    <nav class="site-navigation">
+      <ul>
+        <li><a href="./">Home</a></li>
+        <li><a href="#">Movies</a></li>
+        <li><a href="#">Shows</a></li>
+        <li><a href="#">Streams</a></li>
+        <li class="search-link"><a ng-click="scrollToTop(1000)">Search</a></li>
+      </ul>
+    </nav>
+    <nav class="site-navigation site-navigation-right">
+      <ul ng-if="!user">
+        <li><a ui-sref="register">Create Account</a></li>
+        <li><a class="header-btn" ui-sref="login">Sign In</a></li>
+      </ul>
+      <div ng-if="user" class="btn-group" uib-dropdown is-open="status.isopen">
+        <button id="single-button" type="button" class="header-btn" uib-dropdown-toggle ng-disabled="disabled">{{ user.email }} <span class="caret"></span></button>
+        <ul class="dropdown-menu dropdown-menu-right" uib-dropdown-menu role="menu" >
+          <li role="menuitem"><a href="#"><i class="fa fa-th"></i>Add/Remove Streams</a></li>
+          <li role="menuitem"><a href="#"><i class="fa fa-gratipay"></i>My Favorites</a></li>
+          <li role="menuitem"><a href="#"><i class="fa fa-user-circle"></i>Edit Account</a></li>
+          <li class="divider"></li>
+          <li role="menuitem"><a ng-click="logout()"><i class="fa fa-sign-out"></i>Sign Out</a></li>
+        </ul>
+      </div>
+    </nav>
+  </div>
+</header>
+<search-bar></search-bar>
+</div>

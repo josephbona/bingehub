@@ -1,0 +1,66 @@
+.movie-feature {
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  padding: 20px 0;
+  position: relative;
+  .overlay {
+    background-color: rgba(lighten($brand-dark, 10%), 0.90);
+  }
+  .poster {
+    width: 100%;
+    max-width: 500px;
+    box-shadow: 0 0 50px rgba(0,0,0, .3);
+  }
+  .details {
+    color: white;
+    h2 {
+      font-size: 26px;
+      font-weight: 600;
+      span {
+        margin-left: 10px;
+        font-size: 0.75em;
+        color: #ddd;
+      }
+    }
+    .meta {
+      font-size: 14px;
+      color: $brand-warning;
+      margin-bottom: 20px;
+    }
+  }
+}
+.movie-actions {
+  @include linear-gradient(#fff,#eee);
+  border-bottom: 1px solid #ddd;
+  [class*='col-']:first-child {
+    a {
+      border-left: 1px solid #ddd;
+    }
+  }
+  a {
+    display: block;
+    text-align: center;
+    padding: 12px 20px;
+    color: $gray;
+    border-right: 1px solid #ddd;
+    font-size: 18px;
+    i {
+      @include transition(200ms);
+      margin-right: 15px;
+    }
+    &:hover {
+      background: rgba(#fff, 0.50);
+      text-decoration: none;
+      .fa-heart {
+        color: $brand-danger;
+      }
+      .fa-play-circle {
+        color: $brand-success;
+      }
+      .fa-imdb {
+        color: #f3ce00;
+      }
+    }
+  }
+}

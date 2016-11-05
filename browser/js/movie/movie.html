@@ -1,0 +1,54 @@
+<main>
+  <section class="movie-feature" style="background-image: url({{$ctrl.images.results.thumbnails[0].xlarge.url}})">
+    <div class="overlay"></div>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-3">
+          <img class="poster" ng-src="{{$ctrl.movie.poster_400x570}}">
+        </div>
+        <div class="col-md-6">
+          <div class="details">
+            <h2>{{ $ctrl.movie.title }}<span>({{ $ctrl.movie.release_year }})</span></h2>
+            <div class="meta">
+              {{ $ctrl.movie.rating }} | {{ $ctrl.movie.duration / 60 }} mins
+            </div>
+            <p>{{ $ctrl.movie.overview }}</p>
+          </div>
+        </div>
+        <div class="col-md-3">
+          <div class="panel panel-sources">
+            <div class="panel-heading">
+              <h4 class="panel-title">Start Streaming<span class="source-count">{{ $ctrl.movie.purchase_web_sources.length }} sources</span></h4>
+            </div>
+            <div class="panel-body">
+              <div class="list-group">
+                <a ng-repeat="source in $ctrl.movie.purchase_web_sources" class="list-group-item">{{ source.display_name }}</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="movie-actions">
+    <div class="container">
+      <div class="row no-gutter">
+        <div class="col-sm-4">
+          <a href="#">
+            <i class="fa fa-play-circle"></i>Watch Trailer
+          </a>
+        </div>
+        <div class="col-sm-4">
+          <a href="#">
+            <i class="fa fa-heart"></i>Add To Favorites
+          </a>
+        </div>
+        <div class="col-sm-4">
+          <a href="#">
+            <i class="fa fa-imdb"></i>IMDB Page
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
