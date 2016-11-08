@@ -2,6 +2,7 @@ app.component('search', {
   templateUrl: 'js/search/search.html',
   controller: 'SearchCtrl'
 });
+
 app.controller('SearchCtrl', function (MovieService, $scope, $timeout) {
 
   // This is what you will bind the query to

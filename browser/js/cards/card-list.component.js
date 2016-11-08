@@ -1,6 +1,6 @@
 app.component('cardList', {
   bindings: {
-    cards: '='
+    cards: '<cards'
   },
   template: `
     <div class="row-cards">

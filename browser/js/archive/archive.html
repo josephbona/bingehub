@@ -1,0 +1,13 @@
+<main class="archive">
+  <div class="container">
+    <div class="section-title">
+      <h2>{{$ctrl.title}}</h2>
+      <select class="form-control input-sm" ng-model="sortBy">
+        <option value="None">-- Sort By --</option>
+        <option value="Name">Name</option>
+        <option value="Address">Address</option>
+      </select>
+    </div>
+    <card-list cards="$ctrl.data.results"></card-list>
+  </div>
+</main>

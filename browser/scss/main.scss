@@ -9,8 +9,10 @@
 @import "base/no-gutters";
 // LAYOUT
 @import "layout/header";
+@import "modules/footer";
 // MODULES
 @import "modules/home";
+@import "modules/archive";
 @import "modules/card";
 @import "modules/search";
 @import "modules/movie";

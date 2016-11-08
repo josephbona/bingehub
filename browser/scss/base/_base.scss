@@ -105,6 +105,10 @@ a {
 		line-height: 36px;
 		color: $text-color;
 	}
+  select {
+    width: 200px;
+    float: right;
+  }
 }
 
 .panel-sources {

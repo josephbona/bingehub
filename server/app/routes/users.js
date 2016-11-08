@@ -1,19 +1,12 @@
 const router = require('express').Router();
 const User = require('../../db/models/user');
+const List = require('../../db/models/list');
 
 module.exports = router;
 
-router.get('/', function(req, res, next){
-  User.findAll()
-    .then(function(users){
-      res.send(users);
-    })
-    .catch(next);
-});
-
 router.get('/:id', function(req, res, next){
   User.findById(req.params.id, {
-    include: [Order]
+    include: [List]
   })
     .then(function(user){
       res.send(user);

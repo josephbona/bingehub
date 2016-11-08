@@ -15,9 +15,5 @@ app.component('card', {
 });
 
 function CardCtrl() {
-  function launchModal() {
-    console.log('modal launched');
-  }
 
-  this.launchModal = launchModal;
 }

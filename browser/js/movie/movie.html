@@ -39,7 +39,7 @@
           </a>
         </div>
         <div class="col-sm-4">
-          <a href="#">
+          <a ng-click="addToFavorites($ctrl.movie.id)" href="#">
             <i class="fa fa-heart"></i>Add To Favorites
           </a>
         </div>
@@ -47,6 +47,16 @@
           <a href="#">
             <i class="fa fa-imdb"></i>IMDB Page
           </a>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="movie-extras">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-4">
+          <h3>Actors</h3>
+          <actor-list actors="$ctrl.movie.cast"></actor-list>
         </div>
       </div>
     </div>

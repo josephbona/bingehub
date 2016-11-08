@@ -7,9 +7,14 @@ app.component('movie', {
   contoller: MovieCtrl
 });
 
-function MovieCtrl() {
+function MovieCtrl(UserService, Session) {
   var $ctrl = this;
-  $ctrl.movie.getDurationMinutes = function(seconds) {
-    return $ctrl.movie.duration / 60;
+  $ctrl.user = Session.user;
+
+  function addToFavorites(id) {
+    UserService.addToFavorites(id)
+      .then(function() {
+        $state.go('user', {id: $ctrl.user})
+      });
   }
 }
