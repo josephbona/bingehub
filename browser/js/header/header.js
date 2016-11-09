@@ -5,16 +5,10 @@ app.directive('appHeader', function($rootScope, AuthService, AUTH_EVENTS, $state
     scope: {},
     replace: true,
     templateUrl: 'js/header/header.html',
-    controlller: function($scope, $anchorScroll, $window) {
+    controller: function($scope) {
       $scope.scrollToTop = function(duration) {
-        var scrollStep = window.scrollY / (duration / 15),
-            scrollInterval = setInterval(function() {
-              if(window.scrollY != 0) {
-                window.scrollBy(0,scrollStep);
-              } else {
-                clearInterval(scrollInterval);
-              }
-            }, 15);
+        $('html, body').animate({ scrollTop: 0 }, duration);
+        $('#search-bar').focus();
       }
     },
     link: function(scope) {

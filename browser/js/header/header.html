@@ -8,7 +8,7 @@
         <li><a ui-sref="movies">Movies</a></li>
         <li><a href="#">Shows</a></li>
         <li><a href="#">Streams</a></li>
-        <li class="search-link"><a ng-click="scrollToTop(1000)">Search</a></li>
+        <li class="search-link"><a ng-click="scrollToTop(200)">Search</a></li>
       </ul>
     </nav>
     <nav class="site-navigation site-navigation-right">
@@ -19,7 +19,7 @@
       <div ng-if="user" class="btn-group" uib-dropdown is-open="status.isopen">
         <button id="single-button" type="button" class="header-btn" uib-dropdown-toggle ng-disabled="disabled">{{ user.email }} <span class="caret"></span></button>
         <ul class="dropdown-menu dropdown-menu-right" uib-dropdown-menu role="menu" >
-          <li role="menuitem"><a href="#"><i class="fa fa-th"></i>Add/Remove Streams</a></li>
+          <li role="menuitem"><a href="#"><i class="fa fa-th"></i>My Subscriptions</a></li>
           <li role="menuitem"><a href="#"><i class="fa fa-gratipay"></i>My Favorites</a></li>
           <li role="menuitem"><a ui-sref="user({id: user.id})"><i class="fa fa-user-circle"></i>Edit Account</a></li>
           <li class="divider"></li>

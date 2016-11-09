@@ -27,7 +27,6 @@ app.run(function ($rootScope, AuthService, $state) {
     var destinationStateRequiresAuth = function (state) {
         return state.data && state.data.authenticate;
     };
-
     // $stateChangeStart is an event fired
     // whenever the process of changing a state begins.
     $rootScope.$on('$stateChangeStart', function (event, toState, toParams) {
@@ -58,6 +57,10 @@ app.run(function ($rootScope, AuthService, $state) {
             }
         });
 
+    });
+
+    $rootScope.$on('$stateChangeSuccess',function(){
+        $("html, body").scrollTop();
     });
 
 });
